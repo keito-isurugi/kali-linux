@@ -27,7 +27,7 @@ docker compose up -d
 docker exec -it kali-tryhackme /bin/bash
 ```
 
-## VPN接続
+## VPN接続とLHOST確認
 
 コンテナ内で以下のいずれかを実行：
 
@@ -41,6 +41,28 @@ docker exec -it kali-tryhackme /bin/bash
 openvpn ~/tryhackme.ovpn
 ```
 ※Dockerコンテナ内はrootユーザーなので`sudo`は不要です
+
+### LHOST IPアドレスの確認
+
+#### Dockerコンテナ内で確認
+```bash
+# スクリプトで確認
+/root/get-lhost.sh
+
+# または手動で確認
+ifconfig tun0
+```
+
+#### macOS（ホスト）で確認
+```bash
+# スクリプトで確認
+./get-lhost.sh
+
+# または手動で確認
+ifconfig | grep "inet " | grep -v "127.0.0.1"
+```
+
+msfconsoleではVPN接続時の`tun0`（Linux）または`utun`（macOS）のIPアドレスをLHOSTに設定します。
 
 ## ディレクトリ構成
 

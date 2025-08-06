@@ -5,10 +5,6 @@
 vpn/*.ovpn
 vpn/*.conf
 
-# Workspace files
-workspace/*
-!workspace/.gitkeep
-
 # Tools
 tools/*
 !tools/.gitkeep
