@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  kali:
+    build: .
+    container_name: kali-tryhackme
+    hostname: kali
+    privileged: true
+    network_mode: host
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./workspace:/root/workspace
+      - ./tools:/root/tools
+      - ./tryhackme.ovpn:/root/tryhackme.ovpn
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    restart: unless-stopped

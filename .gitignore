@@ -1,0 +1,24 @@
+# Environment variables
+.env
+
+# VPN configurations
+vpn/*.ovpn
+vpn/*.conf
+
+# Workspace files
+workspace/*
+!workspace/.gitkeep
+
+# Tools
+tools/*
+!tools/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
