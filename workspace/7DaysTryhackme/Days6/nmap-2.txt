@@ -1,0 +1,51 @@
+# Nmap 7.95 scan initiated Sat Aug 16 12:35:41 2025 as: /usr/lib/nmap/nmap -p 88,135,139,3389 -A -Pn -oN nmap-2.txt -v 10.201.127.144
+Nmap scan report for 10.201.127.144
+Host is up (0.28s latency).
+
+PORT     STATE SERVICE       VERSION
+88/tcp   open  kerberos-sec  Microsoft Windows Kerberos (server time: 2025-08-16 12:35:48Z)
+135/tcp  open  msrpc         Microsoft Windows RPC
+139/tcp  open  netbios-ssn   Microsoft Windows netbios-ssn
+3389/tcp open  ms-wbt-server Microsoft Terminal Services
+|_ssl-date: 2025-08-16T12:36:13+00:00; -1s from scanner time.
+| ssl-cert: Subject: commonName=AttacktiveDirectory.spookysec.local
+| Issuer: commonName=AttacktiveDirectory.spookysec.local
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2025-08-15T12:33:29
+| Not valid after:  2026-02-14T12:33:29
+| MD5:   703b:c7c1:fe69:5a9d:2d51:c9b2:6c5f:83ba
+|_SHA-1: aa88:8593:38bb:1b32:1526:124b:6274:e6bb:76ea:bdcf
+| rdp-ntlm-info: 
+|   Target_Name: THM-AD
+|   NetBIOS_Domain_Name: THM-AD
+|   NetBIOS_Computer_Name: ATTACKTIVEDIREC
+|   DNS_Domain_Name: spookysec.local
+|   DNS_Computer_Name: AttacktiveDirectory.spookysec.local
+|   Product_Version: 10.0.17763
+|_  System_Time: 2025-08-16T12:35:59+00:00
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: router
+Running (JUST GUESSING): Allied Telesyn AlliedWare (85%)
+OS CPE: cpe:/h:alliedtelesyn:at-ar410 cpe:/o:alliedtelesyn:alliedware
+Aggressive OS guesses: Allied Telesyn AT-AR410 router (85%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 42.632 days (since Fri Jul  4 21:25:38 2025)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=262 (Good luck!)
+IP ID Sequence Generation: Randomized
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: -1s, deviation: 0s, median: -2s
+|_smb2-time: ERROR: Script execution failed (use -d to debug)
+|_smb2-security-mode: SMB: Couldn't find a NetBIOS name that works for the server. Sorry!
+
+TRACEROUTE (using port 135/tcp)
+HOP RTT       ADDRESS
+1   342.70 ms 10.201.127.144
+
+Read data files from: /usr/share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Aug 16 12:36:14 2025 -- 1 IP address (1 host up) scanned in 33.41 seconds
