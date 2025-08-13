@@ -1,0 +1,68 @@
+# Nmap 7.95 scan initiated Sun Aug 17 08:15:47 2025 as: /usr/lib/nmap/nmap -A -Pn -oN nmap.txt -v blog.thm
+Nmap scan report for blog.thm (10.201.103.183)
+Host is up (0.30s latency).
+Not shown: 996 closed tcp ports (reset)
+PORT    STATE SERVICE     VERSION
+22/tcp  open  ssh         OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 57:8a:da:90:ba:ed:3a:47:0c:05:a3:f7:a8:0a:8d:78 (RSA)
+|   256 c2:64:ef:ab:b1:9a:1c:87:58:7c:4b:d5:0f:20:46:26 (ECDSA)
+|_  256 5a:f2:62:92:11:8e:ad:8a:9b:23:82:2d:ad:53:bc:16 (ED25519)
+80/tcp  open  http        Apache httpd 2.4.29 ((Ubuntu))
+| http-robots.txt: 1 disallowed entry 
+|_/wp-admin/
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+|_http-favicon: Unknown favicon MD5: D41D8CD98F00B204E9800998ECF8427E
+|_http-title: Billy Joel&#039;s IT Blog &#8211; The IT blog
+|_http-generator: WordPress 5.0
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp open  netbios-ssn Samba smbd 4.7.6-Ubuntu (workgroup: WORKGROUP)
+Device type: router
+Running (JUST GUESSING): Allied Telesyn AlliedWare (85%)
+OS CPE: cpe:/h:alliedtelesyn:at-ar410 cpe:/o:alliedtelesyn:alliedware
+Aggressive OS guesses: Allied Telesyn AT-AR410 router (85%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 21.694 days (since Sat Jul 26 15:37:28 2025)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=262 (Good luck!)
+IP ID Sequence Generation: Randomized
+Service Info: Host: BLOG; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled but not required
+| nbstat: NetBIOS name: BLOG, NetBIOS user: <unknown>, NetBIOS MAC: <unknown> (unknown)
+| Names:
+|   BLOG<00>             Flags: <unique><active>
+|   BLOG<03>             Flags: <unique><active>
+|   BLOG<20>             Flags: <unique><active>
+|   \x01\x02__MSBROWSE__\x02<01>  Flags: <group><active>
+|   WORKGROUP<00>        Flags: <group><active>
+|   WORKGROUP<1d>        Flags: <unique><active>
+|_  WORKGROUP<1e>        Flags: <group><active>
+| smb-os-discovery: 
+|   OS: Windows 6.1 (Samba 4.7.6-Ubuntu)
+|   Computer name: blog
+|   NetBIOS computer name: BLOG\x00
+|   Domain name: \x00
+|   FQDN: blog
+|_  System time: 2025-08-17T08:16:14+00:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+| smb2-time: 
+|   date: 2025-08-17T08:16:13
+|_  start_date: N/A
+
+TRACEROUTE (using port 1723/tcp)
+HOP RTT       ADDRESS
+1   371.50 ms blog.thm (10.201.103.183)
+
+Read data files from: /usr/share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Aug 17 08:16:29 2025 -- 1 IP address (1 host up) scanned in 42.26 seconds
